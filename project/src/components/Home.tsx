@@ -36,7 +36,7 @@ export default function Home() {
   const features = [
     {
       icon: <DollarSign className="h-8 w-8 text-blue-600" />,
-      title: 'מחיר הוגן לכולם',
+      title: ' כולם כולם !!!!!!!!מחיר הוגן לכולם',
       description: 'הפלטפורמה בנויה כך שכולם יוצאים מרוצים. מורים מרוויחים את מה שמגיע להם, והתלמידים מקבלים שיעורים איכותיים במחיר הוגן.'
     },
     {
