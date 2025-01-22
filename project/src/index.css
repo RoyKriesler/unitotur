@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.fade-out {
+  animation: fadeOut 0.5s ease-out forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Common button styles with diagonal pattern */
+.btn-pattern {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-pattern::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.2s;
+  background: repeating-linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0.15) 0px,
+    rgba(255, 255, 255, 0.15) 2px,
+    transparent 2px,
+    transparent 12px
+  );
+}
+
+.btn-pattern:hover::before {
+  opacity: 1;
+}
+
+/* Blue button variant */
+.btn-blue {
+  @apply bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200;
+}
+
+/* White outline button variant */
+.btn-outline-white {
+  @apply border-2 border-white text-white px-4 py-2 rounded-lg hover:bg-white hover:text-blue-600 transition-colors duration-200;
+}
+
+/* Enhanced select styles */
+.select-pattern {
+  position: relative;
+  cursor: pointer;
+}
+
+.select-pattern select {
+  appearance: none;
+  padding-right: 2.5rem;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236B7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+  background-position: right 0.5rem center;
+  background-repeat: no-repeat;
+  background-size: 1.5em 1.5em;
+}
+
+.select-pattern select option {
+  padding: 0.75rem;
+  margin: 0.25rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+  cursor: pointer;
+  background-color: white;
+}
+
+.select-pattern select option:hover {
+  background-color: #EFF6FF;
+}
+
+.select-pattern select option:checked {
+  background-color: #2563EB;
+  color: white;
+}
+
+.select-pattern::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+  border-radius: 0.5rem;
+  background: repeating-linear-gradient(
+    -45deg,
+    rgba(37, 99, 235, 0.1) 0px,
+    rgba(37, 99, 235, 0.1) 2px,
+    transparent 2px,
+    transparent 12px
+  );
+}
+
+.select-pattern:hover::before {
+  opacity: 1;
+}
+
+.select-pattern select:focus {
+  @apply ring-2 ring-blue-500 border-blue-500;
+  outline: none;
+}
+
+/* Custom scrollbar for select dropdowns */
+.select-pattern select::-webkit-scrollbar {
+  width: 8px;
+}
+
+.select-pattern select::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.select-pattern select::-webkit-scrollbar-thumb {
+  background: #2563EB;
+  border-radius: 4px;
+}
+
+.select-pattern select::-webkit-scrollbar-thumb:hover {
+  background: #1D4ED8;
+}
+
+/* 3D Carousel Styles */
+.perspective-1000 {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
